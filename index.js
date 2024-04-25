@@ -16,5 +16,5 @@ app.get("/", (req, res) => {
 
 // Iniciar el servidor en el puerto 3000
 app.listen(process.env.PORT || 3000, () => {
-    console.log(`App running at http://localhost:3000`);
+    console.log(`App running at ${process.env.PORT}`);
 });
