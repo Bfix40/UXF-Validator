@@ -1,9 +1,10 @@
 const express = require("express");
 const { body, validationResult } = require("express-validator");
 const app = express();
-
+const cors = require("cors");
 // Middleware para parsear el cuerpo de las solicitudes como JSON
 app.use(express.json());
+app.use(cors());
 
 // Validaciones y sanitizaciones para el endpoint /contact
 app.post(

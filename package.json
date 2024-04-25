@@ -6,11 +6,12 @@
   "scripts": {
     "start": "node index.js",
     "test": "test",
-    "dev" : "node-dev index.js"
+    "dev": "node-dev index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.19.2",
     "express-validator": "^7.0.1",
     "node-dev": "^8.0.0"
