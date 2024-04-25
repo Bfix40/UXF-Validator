@@ -1,5 +1,5 @@
 const express = require("express");
-const { body, validationResult } = require("express-validator");
+
 const app = express();
 const cors = require("cors");
 const contactRouter = require("./routes/contact.routes.js");
