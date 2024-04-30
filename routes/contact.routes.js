@@ -17,6 +17,11 @@ router.route("/contact").post(
     body("budget")
         .isIn(["< 1k", "2k-4k", "5k-10k", "10k-20k", "20k-40k", "50k+"])
         .withMessage("Debe seleccionar un presupuesto válido"),
+    body("projectDescription")
+        .trim()
+        .escape()
+        .notEmpty()
+        .withMessage("La descripción del proyecto es obligatoria"),
     (req, res) => {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
