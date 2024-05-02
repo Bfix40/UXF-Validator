@@ -2,7 +2,7 @@ const router = require("express").Router();
 const Email = require("../services/transporterEmail.js")
 router.route("/send-email").post(async (req, res) => {
     try {
-        const { subject, text, to } = req.body;
+        const { subject, text, to, from } = req.body;
 
         // Verificar si se proporcionan todos los campos necesarios
         if (!subject || !text || !to) {
@@ -15,8 +15,8 @@ router.route("/send-email").post(async (req, res) => {
         const emailOptions = {
             subject,
             text,
-            to: process.env.EMAIL,
-            from,
+            to,
+            from: from,
         };
 
         // Enviar el correo electrónico
